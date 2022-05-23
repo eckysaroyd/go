@@ -3,5 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print("hello")
+	var conferenceName = "Go Conference"
+	const conferenceTickets = 50
+	var availableTickets = 50
+	fmt.Println("Welcome to", conferenceName, "booking application")
+	fmt.Printf("We have total of %v tickets and %v are still available", conferenceTickets, availableTickets)
+	fmt.Println("Get your ticket here to attend")
+
 }
