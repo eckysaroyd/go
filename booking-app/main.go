@@ -10,4 +10,12 @@ func main() {
 	fmt.Printf("We have total of %v tickets and %v are still available", conferenceTickets, availableTickets)
 	fmt.Println("Get your ticket here to attend")
 
+	var userName string
+	var tickets int
+
+	userName = "Abbu"
+	tickets = 50
+
+	fmt.Printf(" %v has  %v tickets", userName, tickets)
+
 }
