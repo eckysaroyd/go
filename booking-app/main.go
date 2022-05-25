@@ -13,17 +13,19 @@ func main() {
 	var firstName string
 	var lastName string
 	var email string
-	var tickets int
+	var tickets uint
 
-	fmt.Println("Enter Your First Name \n")
+	availableTickets = availableTickets - tickets
+	fmt.Printf("Enter Your First Name \n")
 	fmt.Scan(&firstName)
-	fmt.Println("Enter Your Last Name \n")
+	fmt.Printf("Enter Your Last Name \n")
 	fmt.Scan(&lastName)
-	fmt.Println("Enter Your Email Name \n")
+	fmt.Printf("Enter Your Email Name \n")
 	fmt.Scan(&email)
-	fmt.Println("Enter Your Tickets_no \n")
+	fmt.Printf("Enter Your Tickets_no \n")
 	fmt.Scan(&tickets)
-	fmt.Printf("Thank you %v   %v for booking %v tickets. You will receive email confirmation at %v \n", firstName, lastName, email, tickets)
-	fmt.Printf("conferenceName type is %T and conferenceTickets type is %T", conferenceName, conferenceTickets)
+	fmt.Printf("Thank you %v   %v for booking %v tickets. You will receive email confirmation at %v \n", firstName, lastName, tickets, email)
+	fmt.Printf("conferenceName type is %T and conferenceTickets type is %T  \n", conferenceName, conferenceTickets)
+	fmt.Printf("\n %v Tickets remains for %v \n", tickets, conferenceName)
 
 }
