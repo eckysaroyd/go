@@ -47,5 +47,10 @@ func main() {
 
 		}
 		fmt.Printf("\nThese are all first names %v \n", firstNames)
+
+		if availableTickets == 0 {
+			fmt.Println("Our conference tickect is fully. Comeback next year")
+			break
+		}
 	}
 }
