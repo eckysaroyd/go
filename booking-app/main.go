@@ -13,6 +13,8 @@ func main() {
 	fmt.Printf("We have total of %v tickets and %v are still available", conferenceTickets, availableTickets)
 	fmt.Println("Get your ticket here to attend")
 
+	greetUser()
+
 	// var booking [50]string
 	booking := []string{}
 	var firstName string
@@ -73,4 +75,7 @@ func main() {
 		}
 
 	}
+}
+func greetUser() {
+	println("this is another function")
 }
