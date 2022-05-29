@@ -9,11 +9,8 @@ func main() {
 	var conferenceName = "Go Conference"
 	const conferenceTickets int = 50
 	var availableTickets uint = 50
-	fmt.Println("Welcome to", conferenceName, "booking application")
-	fmt.Printf("We have total of %v tickets and %v are still available", conferenceTickets, availableTickets)
-	fmt.Println("Get your ticket here to attend")
 
-	greetUser(conferenceName)
+	greetUser(conferenceName, conferenceTickets, availableTickets)
 
 	// var booking [50]string
 	booking := []string{}
@@ -76,6 +73,9 @@ func main() {
 
 	}
 }
-func greetUser(conf_Name string) {
+func greetUser(conf_Name string, con_tickets int, ava_Tickets uint) {
 	fmt.Printf("\n Welcome %v to our conference ticket App\n", conf_Name)
+	fmt.Println("Welcome to", conf_Name, "booking application")
+	fmt.Printf("We have total of %v tickets and %v are still available", con_tickets, ava_Tickets)
+	fmt.Println("Get your ticket here to attend")
 }
