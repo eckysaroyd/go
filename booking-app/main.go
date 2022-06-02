@@ -67,13 +67,14 @@ func first_name() []string {
 	}
 	return firstNames
 }
-func validate(firstName string, lastName string, email string, tickets uint) (bool, bool, bool) {
-	isValidName := len(firstName) >= 2 && len(lastName) >= 2
-	isValidEmail := strings.Contains(email, "@")
-	isValidTicket := tickets > 0 && availableTickets >= tickets
 
-	return isValidName, isValidEmail, isValidTicket
-}
+// func validate(firstName string, lastName string, email string, tickets uint) (bool, bool, bool) {
+// 	isValidName := len(firstName) >= 2 && len(lastName) >= 2
+// 	isValidEmail := strings.Contains(email, "@")
+// 	isValidTicket := tickets > 0 && availableTickets >= tickets
+
+// 	return isValidName, isValidEmail, isValidTicket
+// }
 func userInput() (string, string, string, uint) {
 	var firstName string
 	var lastName string
