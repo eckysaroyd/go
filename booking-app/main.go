@@ -1,6 +1,7 @@
 package main
 
 import (
+	"booking-app/helper"
 	"fmt"
 	"strings"
 )
@@ -9,7 +10,7 @@ var conferenceName = "Go Conference"
 
 const conferenceTickets int = 50
 
-var availableTickets uint = 50
+var AvailableTickets uint = 50
 
 // var booking [50]string
 var booking = []string{}
@@ -23,7 +24,7 @@ func main() {
 	greetUser()
 	firstName, lastName, email, tickets := userInput()
 	// validation function
-	isValidName, isValidEmail, isValidTicket := validate(firstName, lastName, email, tickets)
+	isValidName, isValidEmail, isValidTicket := helper.Validate(firstName, lastName, email, tickets, AvailableTickets)
 
 	if isValidName && isValidEmail && isValidTicket {
 		bookTicket(tickets, firstName, lastName, email)
@@ -32,7 +33,7 @@ func main() {
 		get_firstNames := first_name()
 		fmt.Printf("\nThese are all first names %v \n", get_firstNames)
 
-		if availableTickets == 0 {
+		if AvailableTickets == 0 {
 			fmt.Println("Our conference tickect is fully. Comeback next year")
 			// break
 		}
@@ -55,7 +56,7 @@ func main() {
 func greetUser() {
 	fmt.Printf("\n Welcome %v to our conference ticket App\n", conferenceName)
 	fmt.Println("Welcome to", conferenceName, "booking application")
-	fmt.Printf("We have total of %v tickets and %v are still available", conferenceTickets, availableTickets)
+	fmt.Printf("We have total of %v tickets and %v are still available", conferenceTickets, AvailableTickets)
 	fmt.Println("Get your ticket here to attend")
 }
 func first_name() []string {
@@ -94,12 +95,12 @@ func userInput() (string, string, string, uint) {
 	}
 }
 func bookTicket(tickets uint, firstName string, lastName string, email string) {
-	availableTickets = availableTickets - tickets
+	AvailableTickets = AvailableTickets - tickets
 	booking = append(booking, firstName+" "+lastName)
 
 	fmt.Printf("Thank you %v   %v for booking %v tickets. You will receive email confirmation at %v \n", firstName, lastName, tickets, email)
 	fmt.Printf("conferenceName type is %T and conferenceTickets type is %T  \n", conferenceName, conferenceTickets)
-	fmt.Printf("\n %v Tickets remains for %v \n", availableTickets, conferenceName)
+	fmt.Printf("\n %v Tickets remains for %v \n", AvailableTickets, conferenceName)
 	fmt.Printf("\nThe whole slice is %v", booking)
 	fmt.Printf("\nThe first slice is %v", booking[0])
 	fmt.Printf("\nThe type is %T", booking)
