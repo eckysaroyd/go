@@ -35,6 +35,7 @@ func main() {
 
 	if isValidName && isValidEmail && isValidTicket {
 		bookTicket(tickets, firstName, lastName, email)
+		sendTickets(tickets, firstName, lastName, email)
 
 		// function call for first_names func()
 		get_firstNames := first_name()
@@ -129,4 +130,10 @@ func bookTicket(tickets uint, firstName string, lastName string, email string) {
 	fmt.Printf("\nThe first slice is %v", booking[0])
 	fmt.Printf("\nThe type is %T", booking)
 	fmt.Printf("\nThe size of slice is %v \n", len(booking))
+}
+func sendTickets(tickets uint, firstName string, lastName string, email string) {
+	var sendTickets = fmt.Sprintf(" %v tickets for %v %v", tickets, firstName, lastName)
+	fmt.Println("\n ######")
+	fmt.Printf("sending : \n %v \n to email address %v", sendTickets, email)
+	fmt.Println("\n ######")
 }
