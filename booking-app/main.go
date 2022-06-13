@@ -3,6 +3,7 @@ package main
 import (
 	"booking-app/helper"
 	"fmt"
+	"time"
 )
 
 var conferenceName = "Go Conference"
@@ -132,6 +133,7 @@ func bookTicket(tickets uint, firstName string, lastName string, email string) {
 	fmt.Printf("\nThe size of slice is %v \n", len(booking))
 }
 func sendTickets(tickets uint, firstName string, lastName string, email string) {
+	time.Sleep(10 * time.Second)
 	var sendTickets = fmt.Sprintf(" %v tickets for %v %v", tickets, firstName, lastName)
 	fmt.Println("\n ######")
 	fmt.Printf("sending : \n %v \n to email address %v", sendTickets, email)
